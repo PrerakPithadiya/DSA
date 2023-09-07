@@ -1,3 +1,13 @@
+/*
+
+*         
+  *       
+    *     
+      *   
+        * 
+
+*/
+
 import java.util.Scanner;
 public class Pattern_7{
     public static void main(String[] args){
