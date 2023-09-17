@@ -1,7 +1,7 @@
 import java.util.Arrays;
 public class Number_of_Even_and_Odd_Bits{
     public static void main(String[] args){
-        int n = 2;
+        int n = 17;
         Number_of_Even_and_Odd_Bits cB = new Number_of_Even_and_Odd_Bits();
         System.out.println(Arrays.toString(cB.evenOddBit(n)));
     }
