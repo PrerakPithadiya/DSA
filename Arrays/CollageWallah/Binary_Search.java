@@ -13,7 +13,7 @@ public class Binary_Search{
     public static int binarySearch(int arr[], int target){
         int n = arr.length, start = 0, end = n - 1;
         while(start <= end){
-            int mid = (start + end) / 2;
+            int mid = start + (end - start) / 2;
             if(arr[mid] == target){
                 return mid;
             } else if(arr[mid] < target){
