@@ -1,0 +1,61 @@
+package _2D_Arrays;
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Generate_Matrix_In_Spiral_AntiClockWise {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Number of Rows : ");
+        int rows = sc.nextInt();
+        System.out.print("Enter the Number of Cols : ");
+        int cols = sc.nextInt();
+        int[][] mat = generateSpiralMatrix(rows, cols);
+        System.out.println("\nThe Matrix is : ");
+        printTheMatrix(mat);
+    }
+
+    public static int[][] generateSpiralMatrix(int r, int c) {
+        int[][] mat = new int[r][c];
+        int top = 0, bottom = r - 1, left = 0, right = c - 1, val = 1;
+        while (top <= bottom && left <= right) {
+            // top
+            for (int j = right; j >= left; j--) {
+                mat[top][j] = val++;
+            }
+
+            // left
+            for (int i = top + 1; i <= bottom; i++) {
+                mat[i][left] = val++;
+            }
+
+            // bottom
+            for (int j = left + 1; j <= right; j++) {
+                if (top == bottom) {
+                    break;
+                }
+                mat[bottom][j] = val++;
+            }
+
+            // right
+            for (int i = bottom - 1; i >= top + 1; i--) {
+                if (left == right) {
+                    break;
+                }
+                mat[i][right] = val++;
+            }
+
+            top++;
+            bottom--;
+            left++;
+            right--;
+        }
+        return mat;
+    }
+
+    public static void printTheMatrix(int[][] mat) {
+        for (int[] arr : mat) {
+            System.out.println(Arrays.toString(arr));
+        }
+    }
+}
